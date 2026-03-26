@@ -2,12 +2,39 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/announcementDetailFragment">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.alphard.campusinfoapp.HomeFragment"
+        android:label="Beranda"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_announcementDetailFragment"
+            app:destination="@id/announcementDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.alphard.campusinfoapp.ScheduleFragment"
+        android:label="Jadwal Kuliah"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.alphard.campusinfoapp.ProfileFragment"
+        android:label="Profil Mahasiswa"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/announcementDetailFragment"
         android:name="com.alphard.campusinfoapp.AnnouncementDetailFragment"
-        android:label="fragment_announcement_detail"
-        tools:layout="@layout/fragment_announcement_detail" />
+        android:label="Detail Pengumuman"
+        tools:layout="@layout/fragment_announcement_detail">
+        <argument
+            android:name="announcementId"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>
